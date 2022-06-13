@@ -9,8 +9,8 @@ import com.example.currencycryptoapp.data.CoinPriceInfo
 
 @Dao
 interface CoinPriceInfoDao {
-    @Query("SELECT * FROM full_price_list ORDER BY lastUpdate")
-    fun getPriceList(): LiveData<List<CoinPriceInfoDao>>
+    @Query("SELECT * FROM full_price_list ORDER BY lastUpdate DESC")
+    fun getPriceList(): LiveData<List<CoinPriceInfo>>
 
     @Query("SELECT * FROM full_price_list WHERE fromSymbol == :fSym LIMIT 1")
     fun getPriceInfoAboutCoin(fSym: String): LiveData<CoinPriceInfo>
