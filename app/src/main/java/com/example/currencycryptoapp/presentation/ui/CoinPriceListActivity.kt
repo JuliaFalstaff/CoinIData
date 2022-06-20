@@ -25,10 +25,8 @@ class CoinPriceListActivity : AppCompatActivity() {
         adapter = CoinInfoAdapter(this)
         adapter?.onClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
-                val intent = Intent(this@CoinPriceListActivity, CoinDetailActivity::class.java)
-                intent.putExtra(CoinDetailActivity.EXTRA_FROM_SYMBOL, coinPriceInfo.fromSymbol)
+                val intent = CoinDetailActivity.newIntent(this@CoinPriceListActivity, coinPriceInfo.fromSymbol)
                 startActivity(intent)
-                Toast.makeText(this@CoinPriceListActivity, "item: ${coinPriceInfo.fromSymbol}", Toast.LENGTH_SHORT).show()
             }
         }
         binding?.recyclerViewCoinPriceList?.adapter = adapter

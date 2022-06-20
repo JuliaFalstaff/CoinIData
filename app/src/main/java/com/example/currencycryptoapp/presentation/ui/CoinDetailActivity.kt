@@ -1,5 +1,7 @@
 package com.example.currencycryptoapp.presentation.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
@@ -31,6 +33,11 @@ class CoinDetailActivity: AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_FROM_SYMBOL = "fSym"
+        private const val EXTRA_FROM_SYMBOL = "fSym"
+        fun newIntent(context: Context, fSymbol: String): Intent {
+            val intent = Intent(context, CoinDetailActivity::class.java)
+            intent.putExtra(EXTRA_FROM_SYMBOL,fSymbol)
+            return intent
+        }
     }
 }
