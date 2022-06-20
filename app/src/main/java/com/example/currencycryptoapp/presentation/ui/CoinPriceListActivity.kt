@@ -2,10 +2,12 @@ package com.example.currencycryptoapp.presentation.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.currencycryptoapp.R
+import com.example.currencycryptoapp.data.CoinPriceInfo
 import com.example.currencycryptoapp.databinding.ActivityCoinPriceListBinding
 import com.example.currencycryptoapp.presentation.adapters.CoinInfoAdapter
 
@@ -20,6 +22,11 @@ class CoinPriceListActivity : AppCompatActivity() {
         binding = ActivityCoinPriceListBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         adapter = CoinInfoAdapter(this)
+        adapter?.onClickListener = object : CoinInfoAdapter.OnCoinClickListener {
+            override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
+                Toast.makeText(this@CoinPriceListActivity, "item: ${coinPriceInfo.fromSymbol}", Toast.LENGTH_SHORT).show()
+            }
+        }
         binding?.recyclerViewCoinPriceList?.adapter = adapter
         binding?.recyclerViewCoinPriceList
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
