@@ -1,5 +1,6 @@
 package com.example.currencycryptoapp.presentation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -24,6 +25,9 @@ class CoinPriceListActivity : AppCompatActivity() {
         adapter = CoinInfoAdapter(this)
         adapter?.onClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
+                val intent = Intent(this@CoinPriceListActivity, CoinDetailActivity::class.java)
+                intent.putExtra(CoinDetailActivity.EXTRA_FROM_SYMBOL, coinPriceInfo.fromSymbol)
+                startActivity(intent)
                 Toast.makeText(this@CoinPriceListActivity, "item: ${coinPriceInfo.fromSymbol}", Toast.LENGTH_SHORT).show()
             }
         }
