@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="slash">/</string>
+    <string name="price_label">price label</string>
+    <string name="max_price_label">max price</string>
+    <string name="last_market_label">last market</string>
+</resources>

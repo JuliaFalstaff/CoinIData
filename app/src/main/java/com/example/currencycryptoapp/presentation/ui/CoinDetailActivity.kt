@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.currencycryptoapp.databinding.ActivityCoinDetailBinding
+import com.squareup.picasso.Picasso
 
 class CoinDetailActivity: AppCompatActivity() {
 
@@ -26,8 +27,15 @@ class CoinDetailActivity: AppCompatActivity() {
         val fromSymbol = intent.getStringExtra(EXTRA_FROM_SYMBOL)
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
         fromSymbol?.let {
-            viewModel.getDetailInfo(it).observe(this, Observer {
-                Log.d("TAG Success Detail", it.toString())
+            viewModel.getDetailInfo(it).observe(this, Observer { coin ->
+                binding?.tvPrice?.text = coin.price
+                binding?.tvMinPrice?.text = coin.lowDay
+                binding?.tvMaxPrice?.text = coin.highDay
+                binding?.tvLastMarket?.text = coin.lastMarket
+                binding?.tvLastUpdate?.text = coin.getFormattedTime()
+                binding?.tvFromSymbol?.text = coin.fromSymbol
+                binding?.tvToSymbol?.text = coin.toSymbol
+                Picasso.get().load(coin.getFullImageURL()).into(binding?.ivLogoCoin)
             })
         }
     }
