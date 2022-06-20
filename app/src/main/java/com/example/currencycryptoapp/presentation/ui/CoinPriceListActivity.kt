@@ -19,7 +19,7 @@ class CoinPriceListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCoinPriceListBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        adapter = CoinInfoAdapter()
+        adapter = CoinInfoAdapter(this)
         binding?.recyclerViewCoinPriceList?.adapter = adapter
         binding?.recyclerViewCoinPriceList
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
