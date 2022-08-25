@@ -12,34 +12,36 @@ import com.squareup.picasso.Picasso
 class CoinDetailActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
-    private var binding: ActivityCoinDetailBinding? = null
+    private val binding by lazy {
+        ActivityCoinDetailBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCoinDetailBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
+        setContentView(binding.root)
         if (!intent.hasExtra(EXTRA_FROM_SYMBOL)) {
             finish()
             return
         }
-        val fromSymbol = intent.getStringExtra(EXTRA_FROM_SYMBOL)
+        val fromSymbol = intent.getStringExtra(EXTRA_FROM_SYMBOL) ?: EMPTY_SYMBOL
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
-        fromSymbol?.let {
-            viewModel.getDetailInfo(it).observe(this, Observer { coin ->
-                binding?.tvPrice?.text = coin.price
-                binding?.tvMinPrice?.text = coin.lowDay
-                binding?.tvMaxPrice?.text = coin.highDay
-                binding?.tvLastMarket?.text = coin.lastMarket
-                binding?.tvLastUpdate?.text = coin.lastUpdate
-                binding?.tvFromSymbol?.text = coin.fromSymbol
-                binding?.tvToSymbol?.text = coin.toSymbol
-                Picasso.get().load(coin.imageUrl).into(binding?.ivLogoCoin)
-            })
-        }
+        viewModel.getDetailInfo(fromSymbol).observe(this, Observer { coin ->
+            with(binding) {
+                tvPrice.text = coin.price
+                tvMinPrice.text = coin.lowDay
+                tvMaxPrice.text = coin.highDay
+                tvLastMarket.text = coin.lastMarket
+                tvLastUpdate.text = coin.lastUpdate
+                tvFromSymbol.text = coin.fromSymbol
+                tvToSymbol.text = coin.toSymbol
+                Picasso.get().load(coin.imageUrl).into(ivLogoCoin)
+            }
+        })
     }
 
     companion object {
         private const val EXTRA_FROM_SYMBOL = "fSym"
+        private const val EMPTY_SYMBOL = ""
         fun newIntent(context: Context, fSymbol: String): Intent {
             val intent = Intent(context, CoinDetailActivity::class.java)
             intent.putExtra(EXTRA_FROM_SYMBOL, fSymbol)

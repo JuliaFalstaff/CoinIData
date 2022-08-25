@@ -11,13 +11,14 @@ import com.example.currencycryptoapp.presentation.adapters.CoinInfoAdapter
 class CoinPriceListActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
-    private var binding: ActivityCoinPriceListBinding? = null
+    private val binding by lazy {
+        ActivityCoinPriceListBinding.inflate(layoutInflater)
+    }
     private var adapter: CoinInfoAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCoinPriceListBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
+        setContentView(binding.root)
         adapter = CoinInfoAdapter(this)
         adapter?.onClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinInfoEntity) {
@@ -28,8 +29,8 @@ class CoinPriceListActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        binding?.recyclerViewCoinPriceList?.adapter = adapter
-        binding?.recyclerViewCoinPriceList
+        binding.recyclerViewCoinPriceList.adapter = adapter
+        binding.recyclerViewCoinPriceList
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
         viewModel.coinInfoList.observe(this, Observer {
             adapter?.coinInfoList = it
@@ -37,7 +38,6 @@ class CoinPriceListActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        binding = null
         super.onDestroy()
     }
 }

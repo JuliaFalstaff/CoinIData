@@ -25,5 +25,4 @@ class CoinViewModel(application: Application) : AndroidViewModel(application) {
             loadDataUseCase()
         }
     }
-
 }
