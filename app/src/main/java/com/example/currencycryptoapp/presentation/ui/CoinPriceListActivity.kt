@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.currencycryptoapp.R
 import com.example.currencycryptoapp.databinding.ActivityCoinPriceListBinding
 import com.example.currencycryptoapp.domain.CoinInfoEntity
 import com.example.currencycryptoapp.presentation.adapters.CoinInfoAdapter
@@ -22,11 +23,11 @@ class CoinPriceListActivity : AppCompatActivity() {
         adapter = CoinInfoAdapter(this)
         adapter?.onClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinInfoEntity) {
-                val intent = CoinDetailActivity.newIntent(
-                    this@CoinPriceListActivity,
-                    coinPriceInfo.fromSymbol
-                )
-                startActivity(intent)
+                if (isOnePaneMode()) {
+                    launchDetailActivity(coinPriceInfo.fromSymbol)
+                } else {
+                    launchDetailFragment(coinPriceInfo.fromSymbol)
+                }
             }
         }
         binding.recyclerViewCoinPriceList.adapter = adapter
@@ -37,7 +38,21 @@ class CoinPriceListActivity : AppCompatActivity() {
         })
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    private fun launchDetailActivity(fromSymbol: String) {
+        val intent = CoinDetailActivity.newIntent(
+            this@CoinPriceListActivity,
+            fromSymbol
+        )
+        startActivity(intent)
     }
+
+    private fun launchDetailFragment(fromSymbol: String) {
+        supportFragmentManager.popBackStack()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, CoinDetailFragment.newInstance(fromSymbol))
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun isOnePaneMode() = binding.fragmentContainer == null
 }
