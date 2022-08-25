@@ -24,5 +24,5 @@ data class CoinInfoDbModel(
         @SerializedName("LASTMARKET")
         val lastMarket: String?,
         @SerializedName("IMAGEURL")
-        val imageUrl: String?
+        val imageUrl: String
 )

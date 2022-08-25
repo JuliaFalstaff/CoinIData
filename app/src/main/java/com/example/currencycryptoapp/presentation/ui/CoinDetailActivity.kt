@@ -3,18 +3,13 @@ package com.example.currencycryptoapp.presentation.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.currencycryptoapp.data.network.ApiFactory
-import com.example.currencycryptoapp.data.network.ApiFactory.BASE_IMAGE_URL
 import com.example.currencycryptoapp.databinding.ActivityCoinDetailBinding
-import com.example.currencycryptoapp.utils.convertTimestampToTime
 import com.squareup.picasso.Picasso
 
-class CoinDetailActivity: AppCompatActivity() {
+class CoinDetailActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
     private var binding: ActivityCoinDetailBinding? = null
@@ -35,10 +30,10 @@ class CoinDetailActivity: AppCompatActivity() {
                 binding?.tvMinPrice?.text = coin.lowDay
                 binding?.tvMaxPrice?.text = coin.highDay
                 binding?.tvLastMarket?.text = coin.lastMarket
-                binding?.tvLastUpdate?.text = convertTimestampToTime(coin.lastUpdate)
+                binding?.tvLastUpdate?.text = coin.lastUpdate
                 binding?.tvFromSymbol?.text = coin.fromSymbol
                 binding?.tvToSymbol?.text = coin.toSymbol
-                Picasso.get().load(BASE_IMAGE_URL + coin.imageUrl).into(binding?.ivLogoCoin)
+                Picasso.get().load(coin.imageUrl).into(binding?.ivLogoCoin)
             })
         }
     }
@@ -47,7 +42,7 @@ class CoinDetailActivity: AppCompatActivity() {
         private const val EXTRA_FROM_SYMBOL = "fSym"
         fun newIntent(context: Context, fSymbol: String): Intent {
             val intent = Intent(context, CoinDetailActivity::class.java)
-            intent.putExtra(EXTRA_FROM_SYMBOL,fSymbol)
+            intent.putExtra(EXTRA_FROM_SYMBOL, fSymbol)
             return intent
         }
     }

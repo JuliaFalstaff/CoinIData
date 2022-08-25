@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currencycryptoapp.R
-import com.example.currencycryptoapp.data.network.ApiFactory.BASE_IMAGE_URL
 import com.example.currencycryptoapp.databinding.ItemCoinInfoBinding
 import com.example.currencycryptoapp.domain.CoinInfoEntity
-import com.example.currencycryptoapp.utils.convertTimestampToTime
 import com.squareup.picasso.Picasso
 
 class CoinInfoAdapter(private val context: Context) :
@@ -47,8 +45,8 @@ class CoinInfoAdapter(private val context: Context) :
                 textViewSymbols.text = String.format(symbolsTemplate, fromSymbol, toSymbol)
                 coinCurrencyTextView.text = price
                 updateTimeTextView.text =
-                    String.format(lastUpdateTemplate, convertTimestampToTime(lastUpdate))
-                Picasso.get().load(BASE_IMAGE_URL + imageUrl).into(logoCoinImageView)
+                    String.format(lastUpdateTemplate, lastUpdate)
+                Picasso.get().load(imageUrl).into(logoCoinImageView)
                 itemView.setOnClickListener {
                     onClickListener?.onCoinClick(this)
                 }

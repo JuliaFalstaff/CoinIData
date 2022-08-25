@@ -6,6 +6,10 @@ import com.example.currencycryptoapp.data.network.model.CoinInfoJsonContainerDto
 import com.example.currencycryptoapp.data.network.model.CoinNamesListDto
 import com.example.currencycryptoapp.domain.CoinInfoEntity
 import com.google.gson.Gson
+import java.sql.Date
+import java.sql.Timestamp
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CoinMapper {
     fun mapDTOtoDbModel(dto: CoinInfoDto):  CoinInfoDbModel = CoinInfoDbModel(
@@ -16,7 +20,7 @@ class CoinMapper {
         dto.highDay,
         dto.lowDay,
         dto.lastMarket,
-        dto.imageUrl
+        BASE_IMAGE_URL + dto.imageUrl
     )
 
     fun mapJsonContainerToListCoinInfo(jsonContainer: CoinInfoJsonContainerDto): List<CoinInfoDto> {
@@ -45,11 +49,25 @@ class CoinMapper {
             dbModel.fromSymbol,
             dbModel.toSymbol,
             dbModel.price,
-            dbModel.lastUpdate,
+            convertTimestampToTime(dbModel.lastUpdate),
             dbModel.highDay,
             dbModel.lowDay,
             dbModel.lastMarket,
             dbModel.imageUrl
         )
+    }
+
+   private fun convertTimestampToTime(timestamp: Long?): String {
+        if (timestamp == null) return ""
+        val stampInMillis = Timestamp(timestamp * 1000)
+        val date = Date(stampInMillis.time)
+        val pattern = "HH:mm:ss"
+        val simpleDateFormat = SimpleDateFormat(pattern, Locale.getDefault())
+        simpleDateFormat.timeZone = TimeZone.getDefault()
+        return simpleDateFormat.format(date)
+    }
+
+    companion object {
+        const val BASE_IMAGE_URL = "https://cryptocompare.com"
     }
 }
