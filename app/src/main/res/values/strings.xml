@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CurrencyCryptoApp</string>
+    <string name="symbols_template">%s / %s</string>
+    <string name="last_update_template">Время последнего обновления: %s</string>
+    <string name="slash">/</string>
+    <string name="price_label">price label</string>
+    <string name="min_price_label">min price</string>
+    <string name="max_price_label">max price</string>
+    <string name="last_market_label">last market</string>
+    <string name="last_updated_label">last update</string>
 </resources>
