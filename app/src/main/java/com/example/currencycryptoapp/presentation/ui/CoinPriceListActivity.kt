@@ -4,15 +4,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.currencycryptoapp.data.network.model.CoinInfoDto
 import com.example.currencycryptoapp.databinding.ActivityCoinPriceListBinding
+import com.example.currencycryptoapp.domain.CoinInfoEntity
 import com.example.currencycryptoapp.presentation.adapters.CoinInfoAdapter
 
 class CoinPriceListActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
     private var binding: ActivityCoinPriceListBinding? = null
-    private var adapter:  CoinInfoAdapter? = null
+    private var adapter: CoinInfoAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,15 +20,18 @@ class CoinPriceListActivity : AppCompatActivity() {
         setContentView(binding?.root)
         adapter = CoinInfoAdapter(this)
         adapter?.onClickListener = object : CoinInfoAdapter.OnCoinClickListener {
-            override fun onCoinClick(coinPriceInfo: CoinInfoDto) {
-                val intent = CoinDetailActivity.newIntent(this@CoinPriceListActivity, coinPriceInfo.fromSymbol)
+            override fun onCoinClick(coinPriceInfo: CoinInfoEntity) {
+                val intent = CoinDetailActivity.newIntent(
+                    this@CoinPriceListActivity,
+                    coinPriceInfo.fromSymbol
+                )
                 startActivity(intent)
             }
         }
         binding?.recyclerViewCoinPriceList?.adapter = adapter
         binding?.recyclerViewCoinPriceList
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
-        viewModel.priceList.observe(this, Observer {
+        viewModel.coinInfoList.observe(this, Observer {
             adapter?.coinInfoList = it
         })
     }

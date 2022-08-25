@@ -3,7 +3,6 @@ package com.example.currencycryptoapp.data.network
 import com.example.currencycryptoapp.BuildConfig
 import com.example.currencycryptoapp.data.network.model.CoinNamesListDto
 import com.example.currencycryptoapp.data.network.model.CoinInfoJsonContainerDto
-import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
