@@ -1,4 +1,4 @@
-package com.example.currencycryptoapp.data.model
+package com.example.currencycryptoapp.data.network.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -9,7 +9,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "full_price_list")
-data class CoinPriceInfo(
+data class CoinInfoDto(
         @SerializedName("TYPE")
         @Expose
         val type: String?,
