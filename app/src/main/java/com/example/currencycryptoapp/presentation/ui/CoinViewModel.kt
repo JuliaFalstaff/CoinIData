@@ -4,10 +4,10 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.currencycryptoapp.api.ApiFactory
-import com.example.currencycryptoapp.data.CoinPriceInfo
-import com.example.currencycryptoapp.data.CoinPriceInfoRawData
-import com.example.currencycryptoapp.room.AppDatabase
+import com.example.currencycryptoapp.data.network.ApiFactory
+import com.example.currencycryptoapp.data.model.CoinPriceInfo
+import com.example.currencycryptoapp.data.model.CoinPriceInfoRawData
+import com.example.currencycryptoapp.data.database.AppDatabase
 import com.google.gson.Gson
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers

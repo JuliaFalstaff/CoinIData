@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currencycryptoapp.R
-import com.example.currencycryptoapp.data.CoinPriceInfo
+import com.example.currencycryptoapp.data.model.CoinPriceInfo
 import com.example.currencycryptoapp.databinding.ItemCoinInfoBinding
 import com.squareup.picasso.Picasso
 

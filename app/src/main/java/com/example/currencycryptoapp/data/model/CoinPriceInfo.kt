@@ -1,8 +1,8 @@
-package com.example.currencycryptoapp.data
+package com.example.currencycryptoapp.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.currencycryptoapp.api.ApiFactory.BASE_IMAGE_URL
+import com.example.currencycryptoapp.data.network.ApiFactory.BASE_IMAGE_URL
 import com.example.currencycryptoapp.utils.convertTimestampToTime
 import com.google.gson.annotations.Expose
 

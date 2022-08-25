@@ -1,14 +1,10 @@
 package com.example.currencycryptoapp.presentation.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.currencycryptoapp.R
-import com.example.currencycryptoapp.data.CoinPriceInfo
+import com.example.currencycryptoapp.data.model.CoinPriceInfo
 import com.example.currencycryptoapp.databinding.ActivityCoinPriceListBinding
 import com.example.currencycryptoapp.presentation.adapters.CoinInfoAdapter
 

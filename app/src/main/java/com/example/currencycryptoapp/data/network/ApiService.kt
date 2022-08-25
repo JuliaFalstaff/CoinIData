@@ -1,8 +1,8 @@
-package com.example.currencycryptoapp.api
+package com.example.currencycryptoapp.data.network
 
 import com.example.currencycryptoapp.BuildConfig
-import com.example.currencycryptoapp.data.CoinInfoListOfData
-import com.example.currencycryptoapp.data.CoinPriceInfoRawData
+import com.example.currencycryptoapp.data.model.CoinInfoListOfData
+import com.example.currencycryptoapp.data.model.CoinPriceInfoRawData
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
