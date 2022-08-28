@@ -5,24 +5,24 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
-import com.example.currencycryptoapp.data.database.AppDatabase
+import com.example.currencycryptoapp.data.database.CoinInfoDao
 import com.example.currencycryptoapp.data.mapper.CoinMapper
-import com.example.currencycryptoapp.data.network.ApiFactory
-import com.example.currencycryptoapp.data.network.ApiService
 import com.example.currencycryptoapp.data.worker.RefreshDataWorker
 import com.example.currencycryptoapp.domain.CoinInfoEntity
 import com.example.currencycryptoapp.domain.CoinRepository
-import kotlinx.coroutines.delay
+import javax.inject.Inject
 
-class CoinRepositoryImpl(private val application: Application): CoinRepository {
-    private val coinInfoDao = AppDatabase.getInstance(application).coinPriceInfoDao()
-    private val mapper = CoinMapper()
+class CoinRepositoryImpl @Inject constructor(
+    private val application: Application,
+    private val coinInfoDao: CoinInfoDao,
+    private val mapper: CoinMapper
+) : CoinRepository {
 
     override fun getPriceList(): LiveData<List<CoinInfoEntity>> {
         return Transformations.map(coinInfoDao.getPriceList()) {
-           it.map {
-               mapper.mapDbModelTOEntity(it)
-           }
+            it.map {
+                mapper.mapDbModelTOEntity(it)
+            }
         }
     }
 
