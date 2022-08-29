@@ -8,8 +8,9 @@ import com.example.currencycryptoapp.data.mapper.CoinMapper
 import com.example.currencycryptoapp.data.network.ApiFactory
 import com.example.currencycryptoapp.data.network.ApiService
 import kotlinx.coroutines.delay
+import javax.inject.Inject
 
-class RefreshDataWorker(
+class RefreshDataWorker (
     context: Context,
     workerParameters: WorkerParameters,
     private val coinInfoDao: CoinInfoDao,
@@ -37,6 +38,20 @@ class RefreshDataWorker(
         const val WORKER_NAME = "refresh_data_worker"
         fun makeRequest(): OneTimeWorkRequest {
             return OneTimeWorkRequestBuilder<RefreshDataWorker>().build()
+        }
+    }
+
+    class Factory @Inject constructor(
+        private val coinInfoDao: CoinInfoDao,
+        private val mapper: CoinMapper,
+        private val apiService: ApiService
+    ): ChildWorkerFactory {
+
+        override fun create(
+            context: Context,
+            workerParameters: WorkerParameters
+        ): ListenableWorker {
+            return RefreshDataWorker(context, workerParameters, coinInfoDao, mapper, apiService)
         }
     }
 }
