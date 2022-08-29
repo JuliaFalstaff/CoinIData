@@ -7,6 +7,7 @@ import com.example.currencycryptoapp.presentation.ui.CoinPriceListActivity
 import dagger.BindsInstance
 import dagger.Component
 
+@ApplicationScope
 @Component(
     modules = [
         DataModule::class,
