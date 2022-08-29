@@ -1,6 +1,7 @@
 package com.example.currencycryptoapp.di
 
 import android.app.Application
+import com.example.currencycryptoapp.CryptoApp
 import com.example.currencycryptoapp.presentation.ui.CoinDetailFragment
 import com.example.currencycryptoapp.presentation.ui.CoinPriceListActivity
 import dagger.BindsInstance
@@ -17,6 +18,8 @@ interface ApplicationComponent {
     fun inject(activity: CoinPriceListActivity)
 
     fun inject(fragment: CoinDetailFragment)
+
+    fun inject(application: CryptoApp)
 
     @Component.Factory
     interface Factory {

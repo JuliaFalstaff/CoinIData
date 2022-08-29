@@ -3,6 +3,8 @@ package com.example.currencycryptoapp.di
 import android.app.Application
 import com.example.currencycryptoapp.data.database.AppDatabase
 import com.example.currencycryptoapp.data.database.CoinInfoDao
+import com.example.currencycryptoapp.data.network.ApiFactory
+import com.example.currencycryptoapp.data.network.ApiService
 import com.example.currencycryptoapp.data.repository.CoinRepositoryImpl
 import com.example.currencycryptoapp.domain.CoinRepository
 import dagger.Binds
@@ -22,6 +24,11 @@ interface DataModule {
             application: Application
         ): CoinInfoDao {
             return AppDatabase.getInstance(application).coinPriceInfoDao()
+        }
+
+        @Provides
+        fun provideApiService(): ApiService {
+            return ApiFactory.apiService
         }
     }
 }
