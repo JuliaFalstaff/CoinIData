@@ -2,21 +2,20 @@ package com.example.currencycryptoapp.data.worker
 
 import android.content.Context
 import androidx.work.*
-import com.example.currencycryptoapp.data.database.AppDatabase
 import com.example.currencycryptoapp.data.database.CoinInfoDao
 import com.example.currencycryptoapp.data.mapper.CoinMapper
-import com.example.currencycryptoapp.data.network.ApiFactory
 import com.example.currencycryptoapp.data.network.ApiService
 import kotlinx.coroutines.delay
 import javax.inject.Inject
 
-class RefreshDataWorker (
+class RefreshDataWorker(
     context: Context,
     workerParameters: WorkerParameters,
     private val coinInfoDao: CoinInfoDao,
     private val mapper: CoinMapper,
     private val apiService: ApiService
-): CoroutineWorker(context, workerParameters
+) : CoroutineWorker(
+    context, workerParameters
 ) {
 
     override suspend fun doWork(): Result {
@@ -45,7 +44,7 @@ class RefreshDataWorker (
         private val coinInfoDao: CoinInfoDao,
         private val mapper: CoinMapper,
         private val apiService: ApiService
-    ): ChildWorkerFactory {
+    ) : ChildWorkerFactory {
 
         override fun create(
             context: Context,

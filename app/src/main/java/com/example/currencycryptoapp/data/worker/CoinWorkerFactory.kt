@@ -4,9 +4,6 @@ import android.content.Context
 import androidx.work.ListenableWorker
 import androidx.work.WorkerFactory
 import androidx.work.WorkerParameters
-import com.example.currencycryptoapp.data.database.CoinInfoDao
-import com.example.currencycryptoapp.data.mapper.CoinMapper
-import com.example.currencycryptoapp.data.network.ApiService
 import javax.inject.Inject
 import javax.inject.Provider
 

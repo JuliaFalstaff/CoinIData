@@ -13,7 +13,7 @@ import java.util.*
 import javax.inject.Inject
 
 class CoinMapper @Inject constructor() {
-    fun mapDTOtoDbModel(dto: CoinInfoDto):  CoinInfoDbModel = CoinInfoDbModel(
+    fun mapDTOtoDbModel(dto: CoinInfoDto): CoinInfoDbModel = CoinInfoDbModel(
         dto.fromSymbol,
         dto.toSymbol,
         dto.price,
@@ -32,7 +32,10 @@ class CoinMapper @Inject constructor() {
             val currencyJson = jsonObject.getAsJsonObject(coinKey)
             val currencyKeySet = currencyJson.keySet()
             for (currentKey in currencyKeySet) {
-                val priceInfo = Gson().fromJson(currencyJson.getAsJsonObject(currentKey), CoinInfoDto::class.java)
+                val priceInfo = Gson().fromJson(
+                    currencyJson.getAsJsonObject(currentKey),
+                    CoinInfoDto::class.java
+                )
                 result.add(priceInfo)
             }
         }
@@ -58,7 +61,7 @@ class CoinMapper @Inject constructor() {
         )
     }
 
-   private fun convertTimestampToTime(timestamp: Long?): String {
+    private fun convertTimestampToTime(timestamp: Long?): String {
         if (timestamp == null) return ""
         val stampInMillis = Timestamp(timestamp * 1000)
         val date = Date(stampInMillis.time)
