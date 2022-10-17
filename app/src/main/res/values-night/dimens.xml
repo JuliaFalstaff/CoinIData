@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="medium_margin">8dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
+    <dimen name="time_description_size">14sp</dimen>
+    <dimen name="current_card_text_size">24sp</dimen>
+    <dimen name="symbols_card_text_size">16sp</dimen>
+    <dimen name="logo_card_size">60dp</dimen>
+    <dimen name="custom_corner_card_radius">4dp</dimen>
+    <dimen name="logo_size_detailed_info">80dp</dimen>
+    <dimen name="symbol_detailed_info_text_size">24sp</dimen>
+    <dimen name="medium_padding">8dp</dimen>
+    <dimen name="label_info_text_size">16sp</dimen>
+    <dimen name="line_size_info">1dp</dimen>
+</resources>

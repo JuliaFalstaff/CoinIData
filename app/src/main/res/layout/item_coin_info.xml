@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_margin="@dimen/small_margin"
+    app:cardCornerRadius="@dimen/custom_corner_card_radius"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,9 +14,9 @@
 
         <ImageView
             android:id="@+id/logoCoinImageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="8dp"
+            android:layout_width="@dimen/logo_card_size"
+            android:layout_height="@dimen/logo_card_size"
+            android:layout_margin="@dimen/medium_margin"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -24,9 +25,9 @@
             android:id="@+id/textViewSymbols"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/large_margin"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="@dimen/symbols_card_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -36,9 +37,9 @@
             android:id="@+id/coinCurrencyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/large_margin"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/current_card_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,9 +50,9 @@
             android:id="@+id/updateTimeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/large_margin"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="@dimen/time_description_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/coinCurrencyTextView"

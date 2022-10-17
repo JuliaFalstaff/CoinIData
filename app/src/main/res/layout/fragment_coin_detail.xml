@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/ivLogoCoin"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_margin="16dp"
+        android:layout_width="@dimen/logo_size_detailed_info"
+        android:layout_height="@dimen/logo_size_detailed_info"
+        android:layout_margin="@dimen/large_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/holo_purple"
-        android:textSize="24sp"
+        android:textSize="@dimen/symbol_detailed_info_text_size"
         app:layout_constraintBottom_toBottomOf="@id/tvSlash"
         app:layout_constraintEnd_toStartOf="@id/tvSlash"
         app:layout_constraintTop_toTopOf="@id/tvSlash"
@@ -31,10 +31,10 @@
         android:id="@+id/tvSlash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:padding="8dp"
+        android:layout_marginTop="@dimen/large_margin"
+        android:padding="@dimen/medium_padding"
         android:text="@string/slash"
-        android:textSize="24sp"
+        android:textSize="@dimen/symbol_detailed_info_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivLogoCoin" />
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/holo_blue_dark"
-        android:textSize="24sp"
+        android:textSize="@dimen/symbol_detailed_info_text_size"
         app:layout_constraintBottom_toBottomOf="@id/tvSlash"
         app:layout_constraintStart_toEndOf="@id/tvSlash"
         app:layout_constraintTop_toTopOf="@id/tvSlash"
@@ -53,25 +53,25 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/medium_margin"
         app:cardUseCompatPadding="true"
         app:layout_constraintTop_toBottomOf="@id/tvSlash">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
+            android:paddingTop="@dimen/medium_padding"
+            android:paddingBottom="@dimen/medium_padding">
 
             <TextView
                 android:id="@+id/tvPriceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
+                android:paddingStart="@dimen/medium_padding"
+                android:paddingEnd="@dimen/medium_padding"
                 android:text="@string/price_label"
-                android:textColor="#000"
-                android:textSize="16sp"
+                android:textColor="@color/black_label_info"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,30 +79,30 @@
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:textColor="#000"
-                android:textSize="16sp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:textColor="@color/black_label_info"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toEndOf="@id/tvPriceLabel"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="7352.5" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="#63000000"
+                android:layout_height="@dimen/line_size_info"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@color/background_line"
                 app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
 
             <TextView
                 android:id="@+id/tvMinPriceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
+                android:layout_marginTop="@dimen/large_margin"
+                android:paddingStart="@dimen/medium_padding"
+                android:paddingEnd="@dimen/medium_padding"
                 android:text="@string/min_price_label"
-                android:textColor="#000"
-                android:textSize="16sp"
+                android:textColor="@color/black_label_info"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
 
@@ -110,31 +110,31 @@
                 android:id="@+id/tvMinPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="16sp"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toEndOf="@id/tvMinPriceLabel"
                 app:layout_constraintTop_toBottomOf="@id/tvPriceLabel"
                 tools:text="7110.0" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="#63000000"
+                android:layout_height="@dimen/line_size_info"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@color/background_line"
                 app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
 
             <TextView
                 android:id="@+id/tvMaxPriceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
+                android:layout_marginTop="@dimen/large_margin"
+                android:paddingStart="@dimen/medium_padding"
+                android:paddingEnd="@dimen/medium_padding"
                 android:text="@string/max_price_label"
-                android:textColor="#000"
-                android:textSize="16sp"
+                android:textColor="@color/black_label_info"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
 
@@ -142,31 +142,31 @@
                 android:id="@+id/tvMaxPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
                 android:textColor="@android:color/holo_green_dark"
-                android:textSize="16sp"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toEndOf="@id/tvMaxPriceLabel"
                 app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel"
                 tools:text="7820.1" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="#63000000"
+                android:layout_height="@dimen/line_size_info"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@color/background_line"
                 app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
 
             <TextView
                 android:id="@+id/tvLastMarketLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
+                android:layout_marginTop="@dimen/large_margin"
+                android:paddingStart="@dimen/medium_padding"
+                android:paddingEnd="@dimen/medium_padding"
                 android:text="@string/last_market_label"
-                android:textColor="#000"
-                android:textSize="16sp"
+                android:textColor="@color/black_label_info"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
 
@@ -174,31 +174,31 @@
                 android:id="@+id/tvLastMarket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:textColor="#000"
-                android:textSize="16sp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:textColor="@color/black_label_info"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toEndOf="@id/tvLastMarketLabel"
                 app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel"
                 tools:text="Bitfinex" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="#63000000"
+                android:layout_height="@dimen/line_size_info"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@color/background_line"
                 app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
 
             <TextView
                 android:id="@+id/tvLastUpdateLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
+                android:layout_marginTop="@dimen/large_margin"
+                android:paddingStart="@dimen/medium_padding"
+                android:paddingEnd="@dimen/medium_padding"
                 android:text="@string/last_updated_label"
-                android:textColor="#000"
-                android:textSize="16sp"
+                android:textColor="@color/black_label_info"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
 
@@ -206,10 +206,10 @@
                 android:id="@+id/tvLastUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:textColor="#000"
-                android:textSize="16sp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:textColor="@color/black_label_info"
+                android:textSize="@dimen/label_info_text_size"
                 app:layout_constraintStart_toEndOf="@id/tvLastUpdateLabel"
                 app:layout_constraintTop_toBottomOf="@id/tvLastMarket"
                 tools:text="21:05:16" />
