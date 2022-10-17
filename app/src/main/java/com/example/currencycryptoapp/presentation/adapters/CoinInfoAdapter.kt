@@ -3,19 +3,16 @@ package com.example.currencycryptoapp.presentation.adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currencycryptoapp.R
-import com.example.currencycryptoapp.data.CoinPriceInfo
 import com.example.currencycryptoapp.databinding.ItemCoinInfoBinding
+import com.example.currencycryptoapp.domain.CoinInfoEntity
 import com.squareup.picasso.Picasso
 
-class CoinInfoAdapter(private val context: Context) : RecyclerView.Adapter<CoinInfoAdapter.CoinInfoViewHolder>() {
-
-    var coinInfoList: List<CoinPriceInfo> = listOf()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
+class CoinInfoAdapter(
+    private val context: Context
+) : ListAdapter<CoinInfoEntity, CoinInfoAdapter.CoinInfoViewHolder>(CoinInfoDiffCallback) {
 
     var onClickListener: OnCoinClickListener? = null
 
@@ -24,24 +21,26 @@ class CoinInfoAdapter(private val context: Context) : RecyclerView.Adapter<CoinI
             ItemCoinInfoBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
-                false))
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: CoinInfoViewHolder, position: Int) {
-        holder.bind(coinInfoList[position])
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount(): Int = coinInfoList.size
-
-    inner class CoinInfoViewHolder(val binding: ItemCoinInfoBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(coin: CoinPriceInfo) = with(binding) {
+    inner class CoinInfoViewHolder(val binding: ItemCoinInfoBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(coin: CoinInfoEntity) = with(binding) {
             with(coin) {
                 val symbolsTemplate = context.resources.getString(R.string.symbols_template)
                 val lastUpdateTemplate = context.resources.getString(R.string.last_update_template)
                 textViewSymbols.text = String.format(symbolsTemplate, fromSymbol, toSymbol)
                 coinCurrencyTextView.text = price
-                updateTimeTextView.text = String.format(lastUpdateTemplate, getFormattedTime())
-                Picasso.get().load(getFullImageURL()).into(logoCoinImageView)
+                updateTimeTextView.text =
+                    String.format(lastUpdateTemplate, lastUpdate)
+                Picasso.get().load(imageUrl).into(logoCoinImageView)
                 itemView.setOnClickListener {
                     onClickListener?.onCoinClick(this)
                 }
@@ -50,6 +49,6 @@ class CoinInfoAdapter(private val context: Context) : RecyclerView.Adapter<CoinI
     }
 
     interface OnCoinClickListener {
-        fun onCoinClick(coinPriceInfo: CoinPriceInfo)
+        fun onCoinClick(coinPriceInfo: CoinInfoEntity)
     }
 }

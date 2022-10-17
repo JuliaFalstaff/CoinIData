@@ -1,44 +1,69 @@
 package com.example.currencycryptoapp.presentation.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.currencycryptoapp.CryptoApp
 import com.example.currencycryptoapp.R
-import com.example.currencycryptoapp.data.CoinPriceInfo
 import com.example.currencycryptoapp.databinding.ActivityCoinPriceListBinding
+import com.example.currencycryptoapp.domain.CoinInfoEntity
 import com.example.currencycryptoapp.presentation.adapters.CoinInfoAdapter
+import javax.inject.Inject
 
 class CoinPriceListActivity : AppCompatActivity() {
 
+
+    private val component by lazy {
+        (application as CryptoApp).component
+    }
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
     private lateinit var viewModel: CoinViewModel
-    private var binding: ActivityCoinPriceListBinding? = null
-    private var adapter:  CoinInfoAdapter? = null
+    private val binding by lazy {
+        ActivityCoinPriceListBinding.inflate(layoutInflater)
+    }
+    private var adapter: CoinInfoAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        component.inject(this)
         super.onCreate(savedInstanceState)
-        binding = ActivityCoinPriceListBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
+        setContentView(binding.root)
         adapter = CoinInfoAdapter(this)
         adapter?.onClickListener = object : CoinInfoAdapter.OnCoinClickListener {
-            override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
-                val intent = CoinDetailActivity.newIntent(this@CoinPriceListActivity, coinPriceInfo.fromSymbol)
-                startActivity(intent)
+            override fun onCoinClick(coinPriceInfo: CoinInfoEntity) {
+                if (isOnePaneMode()) {
+                    launchDetailActivity(coinPriceInfo.fromSymbol)
+                } else {
+                    launchDetailFragment(coinPriceInfo.fromSymbol)
+                }
             }
         }
-        binding?.recyclerViewCoinPriceList?.adapter = adapter
-        binding?.recyclerViewCoinPriceList
-        viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
-        viewModel.priceList.observe(this, Observer {
-            adapter?.coinInfoList = it
+        binding.recyclerViewCoinPriceList.adapter = adapter
+        binding.recyclerViewCoinPriceList.itemAnimator = null
+        viewModel = ViewModelProvider(this, viewModelFactory)[CoinViewModel::class.java]
+        viewModel.coinInfoList.observe(this, Observer {
+            adapter?.submitList(it)
         })
     }
 
-    override fun onDestroy() {
-        binding = null
-        super.onDestroy()
+    private fun launchDetailActivity(fromSymbol: String) {
+        val intent = CoinDetailActivity.newIntent(
+            this@CoinPriceListActivity,
+            fromSymbol
+        )
+        startActivity(intent)
     }
+
+    private fun launchDetailFragment(fromSymbol: String) {
+        supportFragmentManager.popBackStack()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, CoinDetailFragment.newInstance(fromSymbol))
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun isOnePaneMode() = binding.fragmentContainer == null
 }
