@@ -21,7 +21,11 @@ class CoinMapper @Inject constructor() {
         dto.highDay,
         dto.lowDay,
         dto.lastMarket,
-        BASE_IMAGE_URL + dto.imageUrl
+        BASE_IMAGE_URL + dto.imageUrl,
+        dto.change24Hour,
+        dto.openHour,
+        dto.highHour,
+        dto.lowHour
     )
 
     fun mapJsonContainerToListCoinInfo(jsonContainer: CoinInfoJsonContainerDto): List<CoinInfoDto> {
@@ -57,7 +61,11 @@ class CoinMapper @Inject constructor() {
             dbModel.highDay,
             dbModel.lowDay,
             dbModel.lastMarket,
-            dbModel.imageUrl
+            dbModel.imageUrl,
+            dbModel.change24Hour,
+            dbModel.high24Hour,
+            dbModel.low24Hour,
+            dbModel.open24Hour
         )
     }
 

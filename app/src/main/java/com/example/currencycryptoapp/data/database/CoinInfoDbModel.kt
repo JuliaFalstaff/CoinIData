@@ -22,5 +22,13 @@ data class CoinInfoDbModel(
     @SerializedName("LASTMARKET")
     val lastMarket: String?,
     @SerializedName("IMAGEURL")
-    val imageUrl: String
-)
+    val imageUrl: String,
+    @SerializedName("CHANGE24HOUR")
+    val change24Hour: String?,
+    @SerializedName("OPEN24HOUR")
+    val open24Hour: String?,
+    @SerializedName("HIGH24HOUR")
+    val high24Hour: String?,
+    @SerializedName("LOW24HOUR")
+    val low24Hour: String?,
+    )

@@ -8,5 +8,9 @@ data class CoinInfoEntity(
     val highDay: String?,
     val lowDay: String?,
     val lastMarket: String?,
-    val imageUrl: String
+    val imageUrl: String,
+    val change24Hour: String?,
+    val high24Hour: String?,
+    val low24Hour: String?,
+    val open24Hour: String?
 )

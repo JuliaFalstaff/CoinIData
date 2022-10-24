@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.currencycryptoapp.CryptoApp
+import com.example.currencycryptoapp.R
 import com.example.currencycryptoapp.databinding.FragmentCoinDetailBinding
 import com.squareup.picasso.Picasso
 import javax.inject.Inject
@@ -54,6 +55,13 @@ class CoinDetailFragment : Fragment() {
                 tvLastUpdate.text = coin.lastUpdate
                 tvFromSymbol.text = coin.fromSymbol
                 tvToSymbol.text = coin.toSymbol
+                tvChange24Hours.text = String.format(
+                    getString(R.string.symbols_change_template),
+                    coin.change24Hour
+                )
+                tvOpen24Hours.text = coin.open24Hour
+                tvHigh24Hours.text = coin.high24Hour
+                tvLow24Hours.text = coin.low24Hour
                 Picasso.get().load(coin.imageUrl).into(ivLogoCoin)
             }
         })
