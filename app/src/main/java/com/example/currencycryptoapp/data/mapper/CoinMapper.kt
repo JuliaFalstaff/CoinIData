@@ -62,7 +62,7 @@ class CoinMapper @Inject constructor() {
             dbModel.lowDay,
             dbModel.lastMarket,
             dbModel.imageUrl,
-            dbModel.change24Hour,
+            dbModel.change24Hour?.toFloat().toString(),
             dbModel.high24Hour,
             dbModel.low24Hour,
             dbModel.open24Hour
