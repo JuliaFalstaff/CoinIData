@@ -29,6 +29,7 @@ class CoinPriceListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         component.inject(this)
+        setTheme(R.style.Theme_CurrencyCryptoApp)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         adapter = CoinInfoAdapter(this)

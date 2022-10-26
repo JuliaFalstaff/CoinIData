@@ -3,24 +3,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="black_label_info">#000</color>
+    <color name="label_info">#FFFFFF</color>
     <color name="background_line">#63000000</color>
     <color name="primary">#232222</color>
     <color name="secondary">#232222</color>
     <color name="primary_background_night">#212121</color>
     <color name="black_900">#FF212121</color>
     <color name="black_500">#FF9a9b9d</color>
-
-    <!-- Dark Text Color for Light Background -->
-    <color name="textDarkPrimary">#DE000000</color> <!--DE for %87 opacity-->
-    <color name="textDarkSecondary">#8A000000</color> <!--8A for %54 opacity-->
-    <color name="textDarkDisabled">#61000000</color> <!--61 for %38 opacity-->
+    <color name="card_view_background">#55424242</color>
+    <color name="text_min_price">#EF9A9A</color>
+    <color name="text_max_price">#A5D6A7</color>
+    <color name="symbol_coin_info">#B39DDB</color>
+    <color name="symbol_currency_info">#90CAF9</color>
 
     <!-- White Text Color for Dark Background -->
-    <color name="textLightPrimary">#FFFFFF</color> <!--%100 opacity-->
-    <color name="textLightSecondary">#B2FFFFFF</color> <!--B2 for %70 opacity-->
-    <color name="textLightDisabled">#80FFFFFF</color> <!--80 for %50 opacity-->
-    <color name="textLightDisabledDEPRECATED">#4CFFFFFF</color> <!--4C for %30 opacity-->
-
-
+    <color name="textPrimary">#FFFFFF</color> <!--%100 opacity-->
+    <color name="textSecondary">#B2FFFFFF</color> <!--B2 for %70 opacity-->
+    <color name="textDisabled">#80FFFFFF</color> <!--80 for %50 opacity-->
 </resources>

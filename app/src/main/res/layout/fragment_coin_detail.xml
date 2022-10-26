@@ -1,358 +1,359 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.ui.CoinDetailActivity">
-
-    <ImageView
-        android:id="@+id/ivLogoCoin"
-        android:layout_width="@dimen/logo_size_detailed_info"
-        android:layout_height="@dimen/logo_size_detailed_info"
-        android:layout_margin="@dimen/large_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@mipmap/ic_launcher" />
-
-    <TextView
-        android:id="@+id/tvFromSymbol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_purple"
-        android:textSize="@dimen/symbol_detailed_info_text_size"
-        app:layout_constraintBottom_toBottomOf="@id/tvSlash"
-        app:layout_constraintEnd_toStartOf="@id/tvSlash"
-        app:layout_constraintTop_toTopOf="@id/tvSlash"
-        tools:text="BTC" />
-
-    <TextView
-        android:id="@+id/tvSlash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/large_margin"
-        android:padding="@dimen/medium_padding"
-        android:text="@string/slash"
-        android:textSize="@dimen/symbol_detailed_info_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivLogoCoin" />
-
-    <TextView
-        android:id="@+id/tvToSymbol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="@dimen/symbol_detailed_info_text_size"
-        app:layout_constraintBottom_toBottomOf="@id/tvSlash"
-        app:layout_constraintStart_toEndOf="@id/tvSlash"
-        app:layout_constraintTop_toTopOf="@id/tvSlash"
-        tools:text="USD" />
-
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/medium_margin"
-        app:cardUseCompatPadding="true"
-        app:cardElevation="@dimen/card_detailed_info_elevation"
-        app:layout_constraintTop_toBottomOf="@id/tvSlash">
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.CoinDetailActivity">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ivLogoCoin"
+            android:layout_width="@dimen/logo_size_detailed_info"
+            android:layout_height="@dimen/logo_size_detailed_info"
+            android:layout_margin="@dimen/large_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvFromSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/symbol_coin_info"
+            android:textSize="@dimen/symbol_detailed_info_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/tvSlash"
+            app:layout_constraintEnd_toStartOf="@id/tvSlash"
+            app:layout_constraintTop_toTopOf="@id/tvSlash"
+            tools:text="BTC" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSlash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            android:padding="@dimen/medium_padding"
+            android:text="@string/slash"
+            android:textSize="@dimen/symbol_detailed_info_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogoCoin" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvToSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/symbol_currency_info"
+            android:textSize="@dimen/symbol_detailed_info_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/tvSlash"
+            app:layout_constraintStart_toEndOf="@id/tvSlash"
+            app:layout_constraintTop_toTopOf="@id/tvSlash"
+            tools:text="USD" />
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="@dimen/medium_padding"
-            android:paddingBottom="@dimen/medium_padding">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_margin"
+            app:cardBackgroundColor="@color/card_view_background"
+            app:cardElevation="@dimen/card_detailed_info_elevation"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/tvSlash">
 
-            <TextView
-                android:id="@+id/tvPriceLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:text="@string/price_label"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvPriceLabel"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="7352.5" />
-
-            <View
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/line_size_info"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/background_line"
-                app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/medium_padding"
+                android:paddingBottom="@dimen/medium_padding">
 
-            <TextView
-                android:id="@+id/tvMinPriceLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:text="@string/min_price_label"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvPriceLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/price_label"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tvMinPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvMinPriceLabel"
-                app:layout_constraintTop_toBottomOf="@id/tvPriceLabel"
-                tools:text="7110.0" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toEndOf="@id/tvPriceLabel"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="7352.5" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_size_info"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/background_line"
-                app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_info"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@color/background_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
 
-            <TextView
-                android:id="@+id/tvMaxPriceLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:text="@string/max_price_label"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMinPriceLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/min_price_label"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
 
-            <TextView
-                android:id="@+id/tvMaxPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvMaxPriceLabel"
-                app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel"
-                tools:text="7820.1" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMinPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:textColor="@color/text_min_price"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toEndOf="@id/tvMinPriceLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvPriceLabel"
+                    tools:text="7110.0" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_size_info"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/background_line"
-                app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_info"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@color/background_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
 
-            <TextView
-                android:id="@+id/tvLastMarketLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:text="@string/last_market_label"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMaxPriceLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/max_price_label"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
 
-            <TextView
-                android:id="@+id/tvLastMarket"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvLastMarketLabel"
-                app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel"
-                tools:text="Bitfinex" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMaxPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:textColor="@color/text_max_price"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toEndOf="@id/tvMaxPriceLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel"
+                    tools:text="7820.1" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_size_info"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/background_line"
-                app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_info"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@color/background_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
 
-            <TextView
-                android:id="@+id/tvLastUpdateLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:text="@string/last_updated_label"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLastMarketLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/last_market_label"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_size_info"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/background_line"
-                app:layout_constraintTop_toBottomOf="@id/tvLastUpdateLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLastMarket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toEndOf="@id/tvLastMarketLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel"
+                    tools:text="Bitfinex" />
 
-            <TextView
-                android:id="@+id/tvLastUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvLastUpdateLabel"
-                app:layout_constraintTop_toBottomOf="@id/tvLastMarket"
-                tools:text="21:05:16" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_info"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@color/background_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
 
-            <TextView
-                android:id="@+id/tvChange24HoursLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:maxLines="2"
-                android:text="@string/change_24_hours"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvLastUpdateLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLastUpdateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/last_updated_label"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvChange24Hours"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size_change"
-                android:ems="13"
-                app:layout_constraintStart_toEndOf="@id/tvChange24HoursLabel"
-                app:layout_constraintTop_toBottomOf="@+id/tvLastUpdateLabel"
-                tools:text="-95.05%" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_info"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@color/background_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastUpdateLabel" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_size_info"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/background_line"
-                app:layout_constraintTop_toBottomOf="@id/tvChange24HoursLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLastUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toEndOf="@id/tvLastUpdateLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastMarket"
+                    tools:text="21:05:16" />
 
-            <TextView
-                android:id="@+id/tvOpen24HoursLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:text="@string/open_24_hours"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvChange24HoursLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvChange24HoursLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:maxLines="2"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/change_24_hours"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastUpdateLabel" />
 
-            <TextView
-                android:id="@+id/tvOpen24Hours"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvOpen24HoursLabel"
-                app:layout_constraintTop_toBottomOf="@+id/tvChange24HoursLabel"
-                tools:text="7820.1" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvChange24Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:ems="13"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size_change"
+                    app:layout_constraintStart_toEndOf="@id/tvChange24HoursLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLastUpdateLabel"
+                    tools:text="-95.05%" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_size_info"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/background_line"
-                app:layout_constraintTop_toBottomOf="@id/tvOpen24HoursLabel" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_info"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@color/background_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvChange24HoursLabel" />
 
-            <TextView
-                android:id="@+id/tvHigh24HoursLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:text="@string/high_24_hours"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvOpen24HoursLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvOpen24HoursLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/open_24_hours"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvChange24HoursLabel" />
 
-            <TextView
-                android:id="@+id/tvHigh24Hours"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvHigh24HoursLabel"
-                app:layout_constraintTop_toBottomOf="@+id/tvOpen24HoursLabel"
-                tools:text="9520.1" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvOpen24Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toEndOf="@id/tvOpen24HoursLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvChange24HoursLabel"
+                    tools:text="7820.1" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_size_info"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@color/background_line"
-                app:layout_constraintTop_toBottomOf="@id/tvHigh24HoursLabel" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_info"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@color/background_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvOpen24HoursLabel" />
 
-            <TextView
-                android:id="@+id/tvLow24HoursLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/large_margin"
-                android:paddingStart="@dimen/medium_padding"
-                android:paddingEnd="@dimen/medium_padding"
-                android:text="@string/low_24_hours"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvHigh24HoursLabel" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvHigh24HoursLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/high_24_hours"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvOpen24HoursLabel" />
 
-            <TextView
-                android:id="@+id/tvLow24Hours"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:textColor="@color/black_label_info"
-                android:textSize="@dimen/label_info_text_size"
-                app:layout_constraintStart_toEndOf="@id/tvLow24HoursLabel"
-                app:layout_constraintTop_toBottomOf="@+id/tvHigh24HoursLabel"
-                tools:text="5520.1" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvHigh24Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toEndOf="@id/tvHigh24HoursLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOpen24HoursLabel"
+                    tools:text="9520.1" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size_info"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@color/background_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvHigh24HoursLabel" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLow24HoursLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:paddingStart="@dimen/medium_padding"
+                    android:paddingEnd="@dimen/medium_padding"
+                    android:text="@string/low_24_hours"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHigh24HoursLabel" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLow24Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:textColor="@color/label_info"
+                    android:textSize="@dimen/label_info_text_size"
+                    app:layout_constraintStart_toEndOf="@id/tvLow24HoursLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHigh24HoursLabel"
+                    tools:text="5520.1" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
