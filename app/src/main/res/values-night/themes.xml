@@ -13,4 +13,23 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="TextInfoLabelStyle">
+        <item name="android:textColor">@color/label_info</item>
+        <item name="android:textSize">@dimen/label_info_text_size</item>
+        <item name="android:paddingEnd">@dimen/medium_padding</item>
+        <item name="android:paddingStart">@dimen/medium_padding</item>
+    </style>
+
+    <style name="TextInfoStyle">
+        <item name="android:textColor">@color/label_info</item>
+        <item name="android:textSize">@dimen/label_info_text_size</item>
+        <item name="android:layout_marginStart">@dimen/medium_margin</item>
+    </style>
+
+    <style name="CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/custom_corner_card_radius</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardBackgroundColor">@color/card_view_background</item>
+        <item name="android:layout_margin">@dimen/small_margin</item>
+    </style>
 </resources>

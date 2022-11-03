@@ -71,13 +71,10 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvPriceLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/price_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,9 +82,7 @@
                     android:id="@+id/tvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvPriceLabel"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="7352.5" />
@@ -101,14 +96,11 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvMinPriceLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/min_price_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
 
@@ -116,10 +108,8 @@
                     android:id="@+id/tvMinPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/text_min_price"
-                    android:textSize="@dimen/label_info_text_size"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvMinPriceLabel"
                     app:layout_constraintTop_toBottomOf="@id/tvPriceLabel"
                     tools:text="7110.0" />
@@ -133,14 +123,11 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvMaxPriceLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/max_price_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
 
@@ -148,10 +135,8 @@
                     android:id="@+id/tvMaxPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/text_max_price"
-                    android:textSize="@dimen/label_info_text_size"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvMaxPriceLabel"
                     app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel"
                     tools:text="7820.1" />
@@ -165,14 +150,11 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvLastMarketLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/last_market_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
 
@@ -180,10 +162,8 @@
                     android:id="@+id/tvLastMarket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvLastMarketLabel"
                     app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel"
                     tools:text="Bitfinex" />
@@ -197,14 +177,11 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvLastUpdateLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/last_updated_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
 
@@ -219,25 +196,20 @@
                     android:id="@+id/tvLastUpdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvLastUpdateLabel"
                     app:layout_constraintTop_toBottomOf="@id/tvLastMarket"
                     tools:text="21:05:16" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvChange24HoursLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
                     android:maxLines="2"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/change_24_hours"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvLastUpdateLabel" />
 
@@ -245,11 +217,9 @@
                     android:id="@+id/tvChange24Hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
                     android:ems="13"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size_change"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvChange24HoursLabel"
                     app:layout_constraintTop_toBottomOf="@+id/tvLastUpdateLabel"
                     tools:text="-95.05%" />
@@ -263,14 +233,11 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvOpen24HoursLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/open_24_hours"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvChange24HoursLabel" />
 
@@ -278,10 +245,8 @@
                     android:id="@+id/tvOpen24Hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvOpen24HoursLabel"
                     app:layout_constraintTop_toBottomOf="@+id/tvChange24HoursLabel"
                     tools:text="7820.1" />
@@ -295,14 +260,11 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvHigh24HoursLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/high_24_hours"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvOpen24HoursLabel" />
 
@@ -310,10 +272,8 @@
                     android:id="@+id/tvHigh24Hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvHigh24HoursLabel"
                     app:layout_constraintTop_toBottomOf="@+id/tvOpen24HoursLabel"
                     tools:text="9520.1" />
@@ -327,14 +287,11 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvLow24HoursLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/low_24_hours"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvHigh24HoursLabel" />
 
@@ -342,10 +299,8 @@
                     android:id="@+id/tvLow24Hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
+                    style="@style/TextInfoStyle"
                     app:layout_constraintStart_toEndOf="@id/tvLow24HoursLabel"
                     app:layout_constraintTop_toBottomOf="@+id/tvHigh24HoursLabel"
                     tools:text="5520.1" />

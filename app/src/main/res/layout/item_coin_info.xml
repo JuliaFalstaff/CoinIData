@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/small_margin"
-    app:cardBackgroundColor="@color/card_view_background"
-    app:cardCornerRadius="@dimen/custom_corner_card_radius"
-    app:cardUseCompatPadding="true">
+    style="@style/CardViewStyle">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
