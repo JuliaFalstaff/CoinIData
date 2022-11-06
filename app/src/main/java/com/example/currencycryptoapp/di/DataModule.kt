@@ -13,7 +13,6 @@ import dagger.Provides
 
 @Module
 interface DataModule {
-
     @Binds
     fun bindCoinRepository(impl: CoinRepositoryImpl): CoinRepository
 
