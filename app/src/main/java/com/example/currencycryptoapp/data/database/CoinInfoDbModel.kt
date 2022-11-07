@@ -31,4 +31,4 @@ data class CoinInfoDbModel(
     val high24Hour: String?,
     @SerializedName("LOW24HOUR")
     val low24Hour: String?,
-    )
+)
