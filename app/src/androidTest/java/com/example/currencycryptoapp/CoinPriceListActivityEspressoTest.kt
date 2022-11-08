@@ -3,14 +3,12 @@ package com.example.currencycryptoapp
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.ViewAction
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.currencycryptoapp.domain.CoinInfoEntity
 import com.example.currencycryptoapp.presentation.adapters.CoinInfoAdapter
 import com.example.currencycryptoapp.presentation.ui.CoinPriceListActivity
 import junit.framework.TestCase
@@ -48,14 +46,16 @@ class CoinPriceListActivityEspressoTest {
     @Test
     fun activity_RecyclerViewScrollTo() {
         onView(withId(R.id.recyclerViewCoinPriceList)).perform(
-            RecyclerViewActions.scrollToPosition<CoinInfoAdapter.CoinInfoViewHolder>(10))
+            RecyclerViewActions.scrollToPosition<CoinInfoAdapter.CoinInfoViewHolder>(10)
+        )
     }
 
     @Test
     fun activity_RecyclerViewActionOnItem() {
         onView(withId(R.id.recyclerViewCoinPriceList)).perform(
             RecyclerViewActions.actionOnItemAtPosition<CoinInfoAdapter.CoinInfoViewHolder>(
-                1, ViewActions.click())
+                1, ViewActions.click()
+            )
         )
     }
 

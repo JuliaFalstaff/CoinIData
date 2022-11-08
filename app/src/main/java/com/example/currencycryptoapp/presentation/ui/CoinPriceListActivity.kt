@@ -13,7 +13,6 @@ import javax.inject.Inject
 
 class CoinPriceListActivity : AppCompatActivity() {
 
-
     private val component by lazy {
         (application as CryptoApp).component
     }
