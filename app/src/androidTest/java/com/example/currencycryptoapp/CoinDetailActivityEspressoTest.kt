@@ -19,7 +19,8 @@ class CoinDetailActivityEspressoTest {
 
     @Before
     fun setup() {
-        val intent = Intent(ApplicationProvider.getApplicationContext(), CoinDetailActivity::class.java)
+        val intent =
+            Intent(ApplicationProvider.getApplicationContext(), CoinDetailActivity::class.java)
         intent.putExtra("fSym", "BTC")
         scenario = ActivityScenario.launch<CoinDetailActivity>(intent)
     }

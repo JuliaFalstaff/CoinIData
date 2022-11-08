@@ -35,7 +35,4 @@ class CoinPriceListActivityEspressoTest {
     fun close() {
         scenario.close()
     }
-
-
-
 }
