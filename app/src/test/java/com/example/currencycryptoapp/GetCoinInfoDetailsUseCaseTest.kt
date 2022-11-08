@@ -30,6 +30,8 @@ class GetCoinInfoDetailsUseCaseTest {
     @Test
     fun invoke() {
         val symbol = "BTC"
-        Mockito.`when`(getCoinInfoDetailsUseCase.invoke(symbol)).then { repository.getCoinInfoDetails(symbol) }
+        Mockito.`when`(getCoinInfoDetailsUseCase.invoke(symbol)).then {
+            repository.getCoinInfoDetails(symbol)
+        }
     }
 }
