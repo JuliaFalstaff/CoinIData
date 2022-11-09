@@ -20,7 +20,7 @@ class CoinDetailedFragmentEspressoTest {
 
     @Before
     fun setup() {
-        val fragmentArgs = bundleOf("fSym" to "BTC")
+        val fragmentArgs = bundleOf(EXTRA_FROM_SYMBOL to TEST_EXTRA_SYMBOL)
         scenario = launchFragmentInContainer<CoinDetailFragment>(
             fragmentArgs = fragmentArgs,
             themeResId = R.style.Theme_CurrencyCryptoApp
@@ -37,7 +37,7 @@ class CoinDetailedFragmentEspressoTest {
 
     @Test
     fun fragmentTextViewSymbol_HasText() {
-        onView(withId(R.id.tvFromSymbol)).check(matches(withText("BTC")))
+        onView(withId(R.id.tvFromSymbol)).check(matches(withText(TEST_EXTRA_SYMBOL)))
     }
 
     @Test
@@ -61,5 +61,10 @@ class CoinDetailedFragmentEspressoTest {
     @Test
     fun fragmentCardView_IsCompletelyDisplayed() {
         onView(withId(R.id.carViewDetailedInfo)).check(matches(isCompletelyDisplayed()))
+    }
+
+    companion object {
+        private const val EXTRA_FROM_SYMBOL = "fSym"
+        private const val TEST_EXTRA_SYMBOL = "BTC"
     }
 }

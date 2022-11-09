@@ -21,7 +21,7 @@ class CoinDetailActivityEspressoTest {
     fun setup() {
         val intent =
             Intent(ApplicationProvider.getApplicationContext(), CoinDetailActivity::class.java)
-        intent.putExtra("fSym", "BTC")
+        intent.putExtra(EXTRA_FROM_SYMBOL, TEST_EXTRA_SYMBOL)
         scenario = ActivityScenario.launch<CoinDetailActivity>(intent)
     }
 
@@ -40,5 +40,10 @@ class CoinDetailActivityEspressoTest {
     @After
     fun close() {
         scenario.close()
+    }
+
+    companion object {
+        private const val EXTRA_FROM_SYMBOL = "fSym"
+        private const val TEST_EXTRA_SYMBOL = "BTC"
     }
 }

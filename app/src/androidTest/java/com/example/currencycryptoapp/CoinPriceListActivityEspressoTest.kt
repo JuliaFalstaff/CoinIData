@@ -46,7 +46,9 @@ class CoinPriceListActivityEspressoTest {
     @Test
     fun activity_RecyclerViewScrollTo() {
         onView(withId(R.id.recyclerViewCoinPriceList)).perform(
-            RecyclerViewActions.scrollToPosition<CoinInfoAdapter.CoinInfoViewHolder>(10)
+            RecyclerViewActions.scrollToPosition<CoinInfoAdapter.CoinInfoViewHolder>(
+                TEST_RV_SCROLL_POSITION_ITEM
+            )
         )
     }
 
@@ -54,7 +56,8 @@ class CoinPriceListActivityEspressoTest {
     fun activity_RecyclerViewActionOnItem() {
         onView(withId(R.id.recyclerViewCoinPriceList)).perform(
             RecyclerViewActions.actionOnItemAtPosition<CoinInfoAdapter.CoinInfoViewHolder>(
-                1, ViewActions.click()
+                TEST_RV_CLICK_POSITION_ITEM,
+                ViewActions.click()
             )
         )
     }
@@ -62,5 +65,10 @@ class CoinPriceListActivityEspressoTest {
     @After
     fun close() {
         scenario.close()
+    }
+
+    companion object {
+        private const val TEST_RV_SCROLL_POSITION_ITEM = 10
+        private const val TEST_RV_CLICK_POSITION_ITEM = 10
     }
 }

@@ -26,7 +26,7 @@ class CoinDetailFragment : Fragment() {
     private lateinit var viewModel: CoinViewModel
     private var _binding: FragmentCoinDetailBinding? = null
     private val binding
-        get() = _binding ?: throw RuntimeException("FragmentCoinDetailBinding == null")
+        get() = _binding ?: throw RuntimeException(BINDING_ERROR_IS_NULL)
 
     override fun onAttach(context: Context) {
         component.inject(this)
@@ -74,6 +74,7 @@ class CoinDetailFragment : Fragment() {
     companion object {
         private const val EXTRA_FROM_SYMBOL = "fSym"
         private const val EMPTY_SYMBOL = ""
+        private const val BINDING_ERROR_IS_NULL = "FragmentCoinDetailBinding == null"
         fun newInstance(fSymbol: String): Fragment {
             return CoinDetailFragment().apply {
                 arguments = Bundle().apply {
