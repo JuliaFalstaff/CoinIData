@@ -37,20 +37,20 @@ class CoinDetailedFragmentEspressoTest {
 
     @Test
     fun fragmentTextViewSymbol_HasText() {
-        onView(withId(R.id.tvFromSymbol)).check(matches(withText(TEST_EXTRA_SYMBOL)))
+        onView(withId(R.id.textViewFromSymbol)).check(matches(withText(TEST_EXTRA_SYMBOL)))
     }
 
     @Test
     fun fragmentCarViewTextViewInfo_HasTexts() {
-        onView(withId(R.id.tvPrice)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMinPrice)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMaxPrice)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvLastMarket)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvLastUpdate)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvChange24Hours)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvOpen24Hours)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvHigh24Hours)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvLow24Hours)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewPrice)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewMinPrice)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewMaxPrice)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewLastMarket)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewLastUpdate)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewChange24Hours)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewOpen24Hours)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewHigh24Hours)).check(matches(isDisplayed()))
+        onView(withId(R.id.textViewLow24Hours)).check(matches(isDisplayed()))
     }
 
     @Test

@@ -48,21 +48,21 @@ class CoinDetailFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)[CoinViewModel::class.java]
         viewModel.getDetailInfo(fromSymbol).observe(viewLifecycleOwner, Observer { coin ->
             with(binding) {
-                tvPrice.text = coin.price
-                tvMinPrice.text = coin.lowDay
-                tvMaxPrice.text = coin.highDay
-                tvLastMarket.text = coin.lastMarket
-                tvLastUpdate.text = coin.lastUpdate
-                tvFromSymbol.text = coin.fromSymbol
-                tvToSymbol.text = coin.toSymbol
-                tvChange24Hours.text = String.format(
+                textViewPrice.text = coin.price
+                textViewMinPrice.text = coin.lowDay
+                textViewMaxPrice.text = coin.highDay
+                textViewLastMarket.text = coin.lastMarket
+                textViewLastUpdate.text = coin.lastUpdate
+                textViewFromSymbol.text = coin.fromSymbol
+                textViewToSymbol.text = coin.toSymbol
+                textViewChange24Hours.text = String.format(
                     getString(R.string.symbols_change_template),
                     coin.change24Hour
                 )
-                tvOpen24Hours.text = coin.open24Hour
-                tvHigh24Hours.text = coin.high24Hour
-                tvLow24Hours.text = coin.low24Hour
-                Picasso.get().load(coin.imageUrl).into(ivLogoCoin)
+                textViewOpen24Hours.text = coin.open24Hour
+                textViewHigh24Hours.text = coin.high24Hour
+                textViewLow24Hours.text = coin.low24Hour
+                Picasso.get().load(coin.imageUrl).into(imageViewLogoCoin)
             }
         })
     }
