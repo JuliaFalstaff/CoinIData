@@ -37,6 +37,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs = ['-Xjvm-default=enable']
     }
     buildFeatures {
         viewBinding true
@@ -88,7 +89,7 @@ dependencies {
         exclude group: 'org.mockito'
     }
     testImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
-    debugImplementation 'androidx.fragment:fragment-testing:1.4.0'
+    debugImplementation 'androidx.fragment:fragment-testing:1.5.0'
     debugImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
 
 
