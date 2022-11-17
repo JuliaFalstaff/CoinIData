@@ -7,122 +7,164 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "full_price_list")
 data class CoinInfoDto(
-    @SerializedName("TYPE")
+    @SerializedName(ENTITY_TYPE)
     @Expose
     val type: String?,
-    @SerializedName("MARKET")
+    @SerializedName(ENTITY_MARKET)
     @Expose
     val market: String?,
     @PrimaryKey
-    @SerializedName("FROMSYMBOL")
+    @SerializedName(ENTITY_FROM_SYMBOL)
     @Expose
     val fromSymbol: String,
-    @SerializedName("TOSYMBOL")
+    @SerializedName(ENTITY_TO_SYMBOL)
     @Expose
     val toSymbol: String?,
-    @SerializedName("FLAGS")
+    @SerializedName(ENTITY_FLAGS)
     @Expose
     val flags: String?,
-    @SerializedName("PRICE")
+    @SerializedName(ENTITY_PRICE)
     @Expose
     val price: String?,
-    @SerializedName("LASTUPDATE")
+    @SerializedName(ENTITY_LAST_UPDATE)
     @Expose
     val lastUpdate: Long?,
-    @SerializedName("LASTVOLUME")
+    @SerializedName(ENTITY_LAST_VOLUME)
     @Expose
     val lastVolume: String?,
-    @SerializedName("LASTVOLUMETO")
+    @SerializedName(ENTITY_LAST_VOLUME_TO)
     @Expose
     val lastVolumeTo: String?,
-    @SerializedName("LASTTRADEID")
+    @SerializedName(ENTITY_LAST_TRADE_ID)
     @Expose
     val lastTradeId: String?,
-    @SerializedName("VOLUMEDAY")
+    @SerializedName(ENTITY_VOLUME_DAY)
     @Expose
     val volumeDay: String?,
-    @SerializedName("VOLUMEDAYTO")
+    @SerializedName(ENTITY_VOLUME_DAY_TO)
     @Expose
     val volumeDayTo: String?,
-    @SerializedName("VOLUME24HOUR")
+    @SerializedName(ENTITY_VOLUME_24_HOUR)
     @Expose
     val volume24Hour: String?,
-    @SerializedName("VOLUME24HOURTO")
+    @SerializedName(ENTITY_VOLUME_24_HOUR_TO)
     @Expose
     val volume24HourTo: String?,
-    @SerializedName("OPENDAY")
+    @SerializedName(ENTITY_OPEN_DAY)
     @Expose
     val openDay: String?,
-    @SerializedName("HIGHDAY")
+    @SerializedName(ENTITY_HIGH_DAY)
     @Expose
     val highDay: String?,
-    @SerializedName("LOWDAY")
+    @SerializedName(ENTITY_LOW_DAY)
     @Expose
     val lowDay: String?,
-    @SerializedName("OPEN24HOUR")
+    @SerializedName(ENTITY_OPEN24HOUR)
     @Expose
     val open24Hour: String?,
-    @SerializedName("HIGH24HOUR")
+    @SerializedName(ENTITY_HIGH24HOUR)
     @Expose
     val high24Hour: String?,
-    @SerializedName("LOW24HOUR")
+    @SerializedName(ENTITY_LOW24HOUR)
     @Expose
     val low24Hour: String?,
-    @SerializedName("LASTMARKET")
+    @SerializedName(ENTITY_LAST_MARKET)
     @Expose
     val lastMarket: String?,
-    @SerializedName("VOLUMEHOUR")
+    @SerializedName(ENTITY_VOLUME_HOUR)
     @Expose
     val volumeHour: String?,
-    @SerializedName("VOLUMEHOURTO")
+    @SerializedName(ENTITY_VOLUME_HOUR_TO)
     @Expose
     val volumeHourTo: String?,
-    @SerializedName("OPENHOUR")
+    @SerializedName(ENTITY_OPEN_HOUR)
     @Expose
     val openHour: String?,
-    @SerializedName("HIGHHOUR")
+    @SerializedName(ENTITY_HIGH_HOUR)
     @Expose
     val highHour: String?,
-    @SerializedName("LOWHOUR")
+    @SerializedName(ENTITY_LOW_HOUR)
     @Expose
     val lowHour: String?,
-    @SerializedName("TOPTIERVOLUME24HOUR")
+    @SerializedName(ENTITY_TOP_TIER_VOLUME_24_HOUR)
     @Expose
     val topTierVolume24Hour: String?,
-    @SerializedName("TOPTIERVOLUME24HOURTO")
+    @SerializedName(ENTITY_TOP_TIER_VOLUME_24_HOUR_TO)
     @Expose
     val topTierVolume24HourTo: String?,
-    @SerializedName("CHANGE24HOUR")
+    @SerializedName(ENTITY_CHANGE_24_HOUR)
     @Expose
     val change24Hour: String?,
-    @SerializedName("CHANGEPCT24HOUR")
+    @SerializedName(ENTITY_CHANGE_PCT_24_HOUR)
     @Expose
     val changePCT24Hour: String?,
-    @SerializedName("CHANGEDAY")
+    @SerializedName(ENTITY_CHANGE_DAY)
     @Expose
     val changeDay: String?,
-    @SerializedName("CHANGEPCTDAY")
+    @SerializedName(ENTITY_CHANGE_PCT_DAY)
     @Expose
     val changePCTDay: String?,
-    @SerializedName("SUPPLY")
+    @SerializedName(ENTITY_SUPPLY)
     @Expose
     val supply: String?,
-    @SerializedName("MKTCAP")
+    @SerializedName(ENTITY_MKTCAP)
     @Expose
     val mktCap: String?,
-    @SerializedName("TOTALVOLUME24H")
+    @SerializedName(ENTITY_TOTAL_VOLUME_24H)
     @Expose
     val totalVolume24Hour: String?,
-    @SerializedName("TOTALVOLUME24HTO")
+    @SerializedName(ENTITY_TOTAL_VOLUME24HTO)
     @Expose
     val totalVolume24HourTo: String?,
-    @SerializedName("TOTALTOPTIERVOLUME24H")
+    @SerializedName(ENTITY_TOTAL_TOP_TIER_VOLUME_24H)
     @Expose
     val totalTopTierVolume24Hour: String?,
-    @SerializedName("TOTALTOPTIERVOLUME24HTO")
+    @SerializedName(ENTITY_TOTAL_TOP_TIER_VOLUME_24H_TO)
     @Expose
     val totalTopTierVolume24HourTo: String?,
-    @SerializedName("IMAGEURL")
+    @SerializedName(ENTITY_IMAGE_URL)
     @Expose
     val imageUrl: String?
-)
+) {
+    companion object {
+        const val ENTITY_TYPE = "TYPE"
+        const val ENTITY_MARKET = "MARKET"
+        const val ENTITY_FROM_SYMBOL = "FROMSYMBOL"
+        const val ENTITY_TO_SYMBOL = "TOSYMBOL"
+        const val ENTITY_FLAGS = "FLAGS"
+        const val ENTITY_PRICE = "PRICE"
+        const val ENTITY_LAST_UPDATE = "LASTUPDATE"
+        const val ENTITY_LAST_VOLUME = "LASTVOLUME"
+        const val ENTITY_LAST_VOLUME_TO = "LASTVOLUMETO"
+        const val ENTITY_LAST_TRADE_ID = "LASTTRADEID"
+        const val ENTITY_VOLUME_DAY = "VOLUMEDAY"
+        const val ENTITY_VOLUME_DAY_TO = "VOLUMEDAYTO"
+        const val ENTITY_VOLUME_24_HOUR = "VOLUME24HOUR"
+        const val ENTITY_VOLUME_24_HOUR_TO = "VOLUME24HOURTO"
+        const val ENTITY_OPEN_DAY = "OPENDAY"
+        const val ENTITY_HIGH_DAY = "HIGHDAY"
+        const val ENTITY_LOW_DAY = "LOWDAY"
+        const val ENTITY_OPEN24HOUR = "OPEN24HOUR"
+        const val ENTITY_HIGH24HOUR = "HIGH24HOUR"
+        const val ENTITY_LOW24HOUR = "LOW24HOUR"
+        const val ENTITY_LAST_MARKET = "LASTMARKET"
+        const val ENTITY_VOLUME_HOUR = "VOLUMEHOUR"
+        const val ENTITY_VOLUME_HOUR_TO = "VOLUMEHOURTO"
+        const val ENTITY_OPEN_HOUR = "OPENHOUR"
+        const val ENTITY_HIGH_HOUR = "HIGHHOUR"
+        const val ENTITY_LOW_HOUR = "LOWHOUR"
+        const val ENTITY_TOP_TIER_VOLUME_24_HOUR = "TOPTIERVOLUME24HOUR"
+        const val ENTITY_TOP_TIER_VOLUME_24_HOUR_TO = "TOPTIERVOLUME24HOURTO"
+        const val ENTITY_CHANGE_24_HOUR = "CHANGE24HOUR"
+        const val ENTITY_CHANGE_PCT_24_HOUR = "CHANGEPCT24HOUR"
+        const val ENTITY_CHANGE_DAY = "CHANGEDAY"
+        const val ENTITY_CHANGE_PCT_DAY = "CHANGEPCTDAY"
+        const val ENTITY_SUPPLY = "SUPPLY"
+        const val ENTITY_MKTCAP = "MKTCAP"
+        const val ENTITY_TOTAL_VOLUME_24H = "TOTALVOLUME24H"
+        const val ENTITY_TOTAL_VOLUME24HTO = "TOTALVOLUME24HTO"
+        const val ENTITY_TOTAL_TOP_TIER_VOLUME_24H = "TOTALTOPTIERVOLUME24H"
+        const val ENTITY_TOTAL_TOP_TIER_VOLUME_24H_TO = "TOTALTOPTIERVOLUME24HTO"
+        const val ENTITY_IMAGE_URL = "IMAGEURL"
+    }
+}

@@ -15,6 +15,7 @@
     <color name="text_max_price">#4CAF50</color>
     <color name="symbol_coin_info">#673AB7</color>
     <color name="symbol_currency_info">#2196F3</color>
+    <color name="ic_launcher_background">#2B4258</color>
 
     <!-- Dark Text Color for Light Background -->
     <color name="textPrimary">#DE000000</color> <!--DE for %87 opacity-->

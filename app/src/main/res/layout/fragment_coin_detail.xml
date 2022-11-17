@@ -8,31 +8,31 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.CoinDetailActivity">
+        tools:context=".presentation.ui.CoinDetailFragment">
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ivLogoCoin"
+            android:id="@+id/imageViewLogoCoin"
             android:layout_width="@dimen/logo_size_detailed_info"
             android:layout_height="@dimen/logo_size_detailed_info"
             android:layout_margin="@dimen/large_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@mipmap/ic_launcher" />
+            tools:src="@drawable/ic_launcher_foreground" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvFromSymbol"
+            android:id="@+id/textViewFromSymbol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/symbol_coin_info"
             android:textSize="@dimen/symbol_detailed_info_text_size"
-            app:layout_constraintBottom_toBottomOf="@id/tvSlash"
-            app:layout_constraintEnd_toStartOf="@id/tvSlash"
-            app:layout_constraintTop_toTopOf="@id/tvSlash"
+            app:layout_constraintBottom_toBottomOf="@id/textViewSlash"
+            app:layout_constraintEnd_toStartOf="@id/textViewSlash"
+            app:layout_constraintTop_toTopOf="@id/textViewSlash"
             tools:text="BTC" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvSlash"
+            android:id="@+id/textViewSlash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/large_margin"
@@ -41,27 +41,28 @@
             android:textSize="@dimen/symbol_detailed_info_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivLogoCoin" />
+            app:layout_constraintTop_toBottomOf="@id/imageViewLogoCoin" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvToSymbol"
+            android:id="@+id/textViewToSymbol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/symbol_currency_info"
             android:textSize="@dimen/symbol_detailed_info_text_size"
-            app:layout_constraintBottom_toBottomOf="@id/tvSlash"
-            app:layout_constraintStart_toEndOf="@id/tvSlash"
-            app:layout_constraintTop_toTopOf="@id/tvSlash"
+            app:layout_constraintBottom_toBottomOf="@id/textViewSlash"
+            app:layout_constraintStart_toEndOf="@id/textViewSlash"
+            app:layout_constraintTop_toTopOf="@id/textViewSlash"
             tools:text="USD" />
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/carViewDetailedInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_margin"
             app:cardBackgroundColor="@color/card_view_background"
             app:cardElevation="@dimen/card_detailed_info_elevation"
             app:cardUseCompatPadding="true"
-            app:layout_constraintTop_toBottomOf="@id/tvSlash">
+            app:layout_constraintTop_toBottomOf="@id/textViewSlash">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -70,25 +71,20 @@
                 android:paddingBottom="@dimen/medium_padding">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvPriceLabel"
+                    android:id="@+id/textViewPriceLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/price_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvPrice"
+                    android:id="@+id/textViewPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
-                    app:layout_constraintStart_toEndOf="@id/tvPriceLabel"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewPriceLabel"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="7352.5" />
 
@@ -97,31 +93,26 @@
                     android:layout_height="@dimen/line_size_info"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@color/background_line"
-                    app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewPriceLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvMinPriceLabel"
+                    android:id="@+id/textViewMinPriceLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/min_price_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewPriceLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvMinPrice"
+                    android:id="@+id/textViewMinPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/text_min_price"
-                    android:textSize="@dimen/label_info_text_size"
-                    app:layout_constraintStart_toEndOf="@id/tvMinPriceLabel"
-                    app:layout_constraintTop_toBottomOf="@id/tvPriceLabel"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewMinPriceLabel"
+                    app:layout_constraintTop_toBottomOf="@id/textViewPriceLabel"
                     tools:text="7110.0" />
 
                 <View
@@ -129,31 +120,26 @@
                     android:layout_height="@dimen/line_size_info"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@color/background_line"
-                    app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewMinPriceLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvMaxPriceLabel"
+                    android:id="@+id/textViewMaxPriceLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/max_price_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewMinPriceLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvMaxPrice"
+                    android:id="@+id/textViewMaxPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/text_max_price"
-                    android:textSize="@dimen/label_info_text_size"
-                    app:layout_constraintStart_toEndOf="@id/tvMaxPriceLabel"
-                    app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewMaxPriceLabel"
+                    app:layout_constraintTop_toBottomOf="@id/textViewMinPriceLabel"
                     tools:text="7820.1" />
 
                 <View
@@ -161,31 +147,26 @@
                     android:layout_height="@dimen/line_size_info"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@color/background_line"
-                    app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewMaxPriceLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvLastMarketLabel"
+                    android:id="@+id/textViewLastMarketLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/last_market_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewMaxPriceLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvLastMarket"
+                    android:id="@+id/textViewLastMarket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
-                    app:layout_constraintStart_toEndOf="@id/tvLastMarketLabel"
-                    app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewLastMarketLabel"
+                    app:layout_constraintTop_toBottomOf="@id/textViewMaxPriceLabel"
                     tools:text="Bitfinex" />
 
                 <View
@@ -193,65 +174,55 @@
                     android:layout_height="@dimen/line_size_info"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@color/background_line"
-                    app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewLastMarketLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvLastUpdateLabel"
+                    android:id="@+id/textViewLastUpdateLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/last_updated_label"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewLastMarketLabel" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/line_size_info"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@color/background_line"
-                    app:layout_constraintTop_toBottomOf="@id/tvLastUpdateLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewLastUpdateLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvLastUpdate"
+                    android:id="@+id/textViewLastUpdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
-                    app:layout_constraintStart_toEndOf="@id/tvLastUpdateLabel"
-                    app:layout_constraintTop_toBottomOf="@id/tvLastMarket"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewLastUpdateLabel"
+                    app:layout_constraintTop_toBottomOf="@id/textViewLastMarket"
                     tools:text="21:05:16" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvChange24HoursLabel"
+                    android:id="@+id/textViewChange24HoursLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
                     android:maxLines="2"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/change_24_hours"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvLastUpdateLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewLastUpdateLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvChange24Hours"
+                    android:id="@+id/textViewChange24Hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
                     android:ems="13"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size_change"
-                    app:layout_constraintStart_toEndOf="@id/tvChange24HoursLabel"
-                    app:layout_constraintTop_toBottomOf="@+id/tvLastUpdateLabel"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewChange24HoursLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewLastUpdateLabel"
                     tools:text="-95.05%" />
 
                 <View
@@ -259,31 +230,26 @@
                     android:layout_height="@dimen/line_size_info"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@color/background_line"
-                    app:layout_constraintTop_toBottomOf="@id/tvChange24HoursLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewChange24HoursLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvOpen24HoursLabel"
+                    android:id="@+id/textViewOpen24HoursLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/open_24_hours"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvChange24HoursLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewChange24HoursLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvOpen24Hours"
+                    android:id="@+id/textViewOpen24Hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
-                    app:layout_constraintStart_toEndOf="@id/tvOpen24HoursLabel"
-                    app:layout_constraintTop_toBottomOf="@+id/tvChange24HoursLabel"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewOpen24HoursLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewChange24HoursLabel"
                     tools:text="7820.1" />
 
                 <View
@@ -291,31 +257,26 @@
                     android:layout_height="@dimen/line_size_info"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@color/background_line"
-                    app:layout_constraintTop_toBottomOf="@id/tvOpen24HoursLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewOpen24HoursLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvHigh24HoursLabel"
+                    android:id="@+id/textViewHigh24HoursLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/high_24_hours"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvOpen24HoursLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewOpen24HoursLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvHigh24Hours"
+                    android:id="@+id/textViewHigh24Hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
-                    app:layout_constraintStart_toEndOf="@id/tvHigh24HoursLabel"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOpen24HoursLabel"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewHigh24HoursLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewOpen24HoursLabel"
                     tools:text="9520.1" />
 
                 <View
@@ -323,36 +284,29 @@
                     android:layout_height="@dimen/line_size_info"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@color/background_line"
-                    app:layout_constraintTop_toBottomOf="@id/tvHigh24HoursLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewHigh24HoursLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvLow24HoursLabel"
+                    android:id="@+id/textViewLow24HoursLabel"
+                    style="@style/TextInfoLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:paddingStart="@dimen/medium_padding"
-                    android:paddingEnd="@dimen/medium_padding"
                     android:text="@string/low_24_hours"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvHigh24HoursLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/textViewHigh24HoursLabel" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvLow24Hours"
+                    android:id="@+id/textViewLow24Hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/large_margin"
-                    android:textColor="@color/label_info"
-                    android:textSize="@dimen/label_info_text_size"
-                    app:layout_constraintStart_toEndOf="@id/tvLow24HoursLabel"
-                    app:layout_constraintTop_toBottomOf="@+id/tvHigh24HoursLabel"
+                    style="@style/TextInfoStyle"
+                    app:layout_constraintStart_toEndOf="@id/textViewLow24HoursLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewHigh24HoursLabel"
                     tools:text="5520.1" />
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

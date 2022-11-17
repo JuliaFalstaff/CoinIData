@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CurrencyCryptoApp</string>
+    <string name="app_name">Coins IData</string>
     <string name="symbols_template">%s / %s</string>
     <string name="last_update_template">Время последнего обновления: %s</string>
     <string name="slash">/</string>
