@@ -13,4 +13,5 @@
     <string name="high_24_hours">High 24 hour:</string>
     <string name="low_24_hours">Low 24 hour:</string>
     <string name="symbols_change_template">%s%%</string>
+    <string name="icon_coin_logo_info">Icon Coin Logo</string>
 </resources>
