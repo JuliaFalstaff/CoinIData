@@ -1,5 +1,9 @@
 package com.example.currencycryptoapp.domain
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class CoinInfoEntity(
     val fromSymbol: String,
     val toSymbol: String?,
@@ -13,4 +17,4 @@ data class CoinInfoEntity(
     val high24Hour: String?,
     val low24Hour: String?,
     val open24Hour: String?
-)
+): Parcelable

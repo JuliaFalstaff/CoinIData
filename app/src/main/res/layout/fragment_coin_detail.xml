@@ -15,6 +15,7 @@
             android:layout_width="@dimen/logo_size_detailed_info"
             android:layout_height="@dimen/logo_size_detailed_info"
             android:layout_margin="@dimen/large_margin"
+            android:contentDescription="@string/icon_coin_logo_info"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
