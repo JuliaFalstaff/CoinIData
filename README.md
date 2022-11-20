@@ -27,5 +27,3 @@ ________
 
 ### Open API
 Coin IData using the open source api [Crypto Compare](https://www.cryptocompare.com/)
-
-  
