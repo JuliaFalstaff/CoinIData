@@ -13,6 +13,7 @@
 #### 3. Base Structure
 * Single Activity
 * Fragments
+* UseCases
 * Coroutines
 #### 4. UI
 * Picasso
