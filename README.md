@@ -24,3 +24,7 @@ ________
 
 ### Open API
 Coin IData using the open source api [Crypto Compare](https://www.cryptocompare.com/)
+
+| Main Screen | Detail Info Screen |
+| ------------- | ------------- |
+| <img src="app/src/main/res/drawable/main_screen.png" width="200" height="400" /> | <img src="app/src/main/res/drawable/detail_screen.png" width="200" height="400" />  
