@@ -12,7 +12,7 @@ android {
     buildToolsVersion = "30.0.3"
 
     defaultConfig {
-        applicationId = "com.example.currencycryptoapp"
+        applicationId = "com.jfalstaff.currencycryptoapp"
         minSdk = 23
         targetSdk = 31
         versionCode = 1
