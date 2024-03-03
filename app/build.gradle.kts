@@ -8,13 +8,13 @@ plugins {
 }
 
 android {
-    compileSdk = 31
+    compileSdk = 33
     buildToolsVersion = "30.0.3"
 
     defaultConfig {
         applicationId = "com.jfalstaff.currencycryptoapp"
         minSdk = 23
-        targetSdk = 31
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
